@@ -20,6 +20,32 @@
   
 
 //Code Here
+// TRY NUMBER ONE--------------------------------------------------------------
+let user = {
+  username: 'Mark', 
+  email: 'mark_nagel@hotmail.com', 
+  getUsername: function(){
+      return this.username;
+  }
+}
+// TRY NUMBER TWO -------------------------------------------------------------
+// let user = {
+//   this.username: [  ], 
+//   this.email: [  ], 
+//   getUsername: function(){
+//       return this.name;
+//   }
+// }
+// TRY NUMBER THREE -----------------------------------------------------------
+// class user {
+//   constructor(username, email){
+//     this.username = username;
+//     this.email = email;
+//     getUsername =  function(){
+//       return this.name;
+//   }
+// }
+
 
 
 
@@ -43,6 +69,8 @@ class Animal {
 
 //Code Here
 
+var animal1 = new Animal("Haley", "human", "all the candy");
+//var Animal1 = new Animal(Haley, human, all the candy);
 
 
 ////////// PROBLEM 3 //////////
@@ -62,8 +90,10 @@ let who = {
 }
 
 //Code Here
-
-
+var whoSaysHi = sayHi.bind(who);
+//var whoSaysHi = sayHi.bind(who.name);
+//var whoSaysHi = sayHi.bind(user);
+//var whoSaysHi = sayHi.bind(user.username);
 
 ////////// PROBLEM 4 //////////
 
@@ -76,7 +106,11 @@ function whatIsThis() {
 }
 
 // uncomment the line below and tell us what the context of "this" is for whatIsThis()
-//let context1 = ???
+//let context1 = global
+//let context1 = undefined
+let context1 = window
+
+
 
 let product = {
   name: 'snake plant',
@@ -87,7 +121,16 @@ let product = {
 let func = whatIsThis.bind(product)
 
 // uncomment the line below and tell us what the context of "this" is when we invoke func
-//let context2 = ???
+//let context2 = undefined
+//let context2 = "undefined"
+//let context2 = '[Function: bound whatIsThis]'
+//let context2 = 'Function: bound whatIsThis'
+//let context2 = 'whatIsThis'
+//let context2 = window
+let context2 = product
+
+
+
 
 let vacation = {
   location: 'Hawaii',
@@ -98,7 +141,27 @@ let vacation = {
 }
 
 // uncomment the line below and tell us what the context of "this" is when we invoke vacation.whatIsThis
-//let context3 = ???
+
+
+//let context3 = whatIsThis
+//let context3 = ReferenceError: whatIsThis is not defined
+//let context3 = undefined
+//let context3 = window
+//let context3 = 'whatIsThis is not defined'
+//let context3 = 'ReferenceError: whatIsThis is not defined'
+//let context3 = true
+//let context3 = 'whatIsThis is not defined'
+//let context3 = ReferenceError
+// ------------------finally realized it relates to the above question -----------------------------
+//let context3 = product
+//let context3 = "Function: whatIsThis"
+//let context3 = vacation.window
+//let context3 = func
+//let context3 = vacation.undefined
+//let context3 = '[Function: whatIsThis]'
+//let context3 = "{ location: 'Hawaii', price: 3000, days: 7, nights: 6, whatIsThis: [Function: whatIsThis] }"
+let context3 = vacation
+
 
 
 class Family {
@@ -116,4 +179,14 @@ class Family {
 let family1 = new Family(2, 4, 1)
 
 // uncomment the line below and tell us what the context of "this" is for the instance of Family created above.
-//let context4 = ???
+let context4 = family1
+//let context4 = 
+//let context4 = 
+//let context4 = 
+//let context4 = 
+//let context4 = 
+//let context4 = 
+//let context4 = 
+//let context4 = 
+//let context4 = 
+//let context4 = 

@@ -30,6 +30,19 @@
 */
 
 //Code Here
+class Employee {
+  constructor(first_name, last_name, email, age){
+    this.first_name = first_name; 
+    this.last_name = last_name; 
+    this.email = email; 
+    this.age = age;
+  }
+    makeWidget (){
+     return this.first_name + ' ' + this.last_name + ' ' + 'Widget';
+  }
+}
+
+
 
 
 ////////// PROBLEM 2 //////////
@@ -48,6 +61,21 @@
 */
 
 //Code Here
+class Manager extends Employee{
+  constructor(first_name, last_name, email, age, reports){
+    super(first_name, last_name, email, age)
+    this.reports = []; 
+  }
+  hire(pizza){
+    //Accepts a new employee as a parameter and pushes it to their list of reports.
+    this.reports.push(pizza) 
+  }
+  fire(spaghetti){
+     //Fire removes employees from their list of reports at the given index
+  this.reports.splice(spaghetti, 1)
+  }
+}
+
 
 
 ////////// PROBLEM 3 //////////
@@ -72,8 +100,78 @@
 */
 
 //Code Here
+class ProgressiveManager extends Manager{
+  constructor(first_name, last_name, email, age, reports, title, bonus){
+    super(first_name, last_name, email, age, reports)
+    this.title = 'Not a manager';
+    this.bonus = 0;
+  }
+    hire(pizza){
+      this.reports.push(pizza) 
+      if (this.reports.length < 1){
+        // this.title.splice(1, 1, 'Not a manager', 1) 
+        this.title = 'Not a manager'
+      
+      }
+      else if (this.reports.length <= 3){
+        // this.title.splice(0, 1, 'Barely Manager', 1)
+        this.title = 'Barely Manager'
+      }  
+      else if (this.reports.length <= 10){
+        // this.title.splice(0, 1, 'Mostly Manager', 1)
+        this.title = 'Mostly Manager'
+      }
+      else if (this.reports.length <= 50){
+        // this.title.splice(0, 1, 'Manager', 1)
+        this.title = 'Manager'
+      }
+      else if (this.reports.length <= 100){
+        // this.title.splice(0, 1, 'Manager Plus', 1)
+        this.title = 'Manager Plus'
+      }
+      else if (this.reports.length > 100){
+        // this.title.splice(0, 1, 'Bestest Manager', 1)
+        this.title = 'Bestest Manager'
+      }
+    }
 
 
+
+    fire(spaghetti){
+      this.reports.splice(spaghetti, 1)
+      this.bonus += 100
+
+      
+
+      if (this.reports.length < 1){
+        // this.title.splice(1, 1, 'Not a manager', 1) 
+        this.title = 'Not a manager'
+      }
+      else if (this.reports.length <= 3){
+        // this.title.splice(0, 1, 'Barely Manager', 1)
+        this.title = 'Barely Manager'
+      }  
+      else if (this.reports.length <= 10){
+        // this.title.splice(0, 1, 'Mostly Manager', 1)
+        this.title = 'Mostly Manager'
+      }
+      else if (this.reports.length <= 50){
+        // this.title.splice(0, 1, 'Manager', 1)
+        this.title = 'Manager'
+      }
+      else if (this.reports.length <= 100){
+        // this.title.splice(0, 1, 'Manager Plus', 1)
+        this.title = 'Manager Plus'
+      }
+      else if (this.reports.length > 100){
+        // this.title.splice(0, 1, 'Bestest Manager', 1)
+        this.title = 'Bestest Manager'
+      }
+    }
+      
+  
+
+} 
 
 ////////// PROBLEM 4 - Black Diamond //////////
 
